@@ -1,0 +1,30 @@
+{
+  "variables": {
+  },
+  "builders": [
+    {  
+      "type": "docker",
+      "image": "alpine",
+      "commit": true,
+      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/sh"]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "provisioners/pre.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "staging_directory": "/tmp/packer-swaggy-c",
+      "manifest_file": "provisioners/langs.pp",
+      "module_paths": [
+        "modules"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "provisioners/post.sh"
+    }
+  ]
+}
