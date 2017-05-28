@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # echo "bash version: $(bash --version)"
 echo "erlang version: $(erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell)"
 echo "gem version: $(gem --version)"
