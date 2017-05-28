@@ -11,6 +11,6 @@ addons:
 install:
   - sudo apt-get install unzip
   - wget https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip
-  - sudo unzip packer_1.0.0_linux_amd64.zip -d /usr/local/bin/
+  - sudo unzip -o packer_1.0.0_linux_amd64.zip -d /usr/local/bin/
 script:
   - make ci
