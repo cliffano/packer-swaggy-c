@@ -1,3 +1,5 @@
+ci: clean tools deps lint docker
+
 clean:
 	rm -rf logs modules
 
@@ -21,4 +23,4 @@ docker:
 tools:
 	gem install puppet-lint r10k
 
-.PHONY: clean deps lint docker tools
+.PHONY: ci clean deps lint docker tools
