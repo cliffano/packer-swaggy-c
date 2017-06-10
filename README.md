@@ -17,7 +17,9 @@ Installation
 Usage
 -----
 
-TODO
+Create Docker image with languages provisioned using Puppet:
+
+    make docker
 
 Colophon
 --------
