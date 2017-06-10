@@ -4,7 +4,7 @@ package { 'erlang':
 }
 
 #package { 'ghc':
-#  ensure   => '8.0.2-r6', 
+#  ensure   => '8.0.2-r6',
 #  provider => 'apk',
 #}
 
@@ -13,10 +13,10 @@ package { 'go':
   provider => 'apk',
 }
 
-package { 'mono':
-  ensure   => '4.6.1.5-r0',
-  provider => 'apk',
-}
+#package { 'mono':
+#  ensure   => '4.6.1.5-r0',
+#  provider => 'apk',
+#}
 
 package { 'nodejs':
   ensure   => '6.10.3-r0',
@@ -47,8 +47,3 @@ package { 'python':
   ensure   => '2.7.12-r0',
   provider => 'apk',
 }
-
-#package { 'typescript':
-#  ensure   => '2.3.3',
-#  provider => 'npm',
-#}
