@@ -2,7 +2,7 @@
   "variables": {
   },
   "builders": [
-    {  
+    {
       "type": "docker",
       "image": "alpine",
       "commit": true,
@@ -17,14 +17,23 @@
     {
       "type": "puppet-masterless",
       "staging_directory": "/tmp/packer-swaggy-c",
-      "manifest_file": "provisioners/langs.pp",
+      "manifest_file": "provisioners/swaggy-c.pp",
       "module_paths": [
-        "modules"
+        "modules",
+        "modules-extra"
       ]
     },
     {
       "type": "shell",
       "script": "provisioners/post.sh"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "cliffano/swaggy-c",
+      "tag": "latest",
+      "only": ["docker"]
     }
   ]
 }
