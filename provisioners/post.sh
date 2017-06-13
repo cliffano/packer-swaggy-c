@@ -15,4 +15,6 @@ echo "python version: $(python --version)"
 # echo "typescript version: $(tsc --version)"
 echo "ruby version: $(ruby --version)"
 
+echo "swaggy-c version: $(swaggy-c --version)"
+
 rm -rf /tmp/packer-swaggy-c/
