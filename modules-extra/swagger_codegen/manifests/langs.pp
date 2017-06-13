@@ -1,14 +1,14 @@
 class swagger_codegen::langs (
-  $erlang_version     = '19.3.0-r3',
-  $ghc_version        = '8.0.2-r6',
-  $go_version         = '1.8.1-r0',
-  $mono_version       = '4.6.1.5-r0',
-  $nodejs_version     = '6.10.3-r0',
-  $nodejs_npm_version = '6.10.3-r0',
-  $openjdk7_version   = '7.131.2.6.9-r1',
-  $perl_version       = '5.24.1-r2',
-  $php5_version       = '5.6.30-r0',
-  $python_version     = '2.7.12-r0',
+  $erlang_version   = '19.3.0-r3',
+  $ghc_version      = '8.0.2-r6',
+  $go_version       = '1.8.1-r0',
+  $mono_version     = '4.6.1.5-r0',
+  $nodejs_version   = '6.10.3-r0',
+  $npm_version      = '6.10.3-r0',
+  $openjdk7_version = '7.131.2.6.9-r1',
+  $perl_version     = '5.24.1-r2',
+  $php_version      = '5.6.30-r0',
+  $python_version   = '2.7.12-r0',
 ) {
 
   package { 'erlang':
@@ -37,7 +37,7 @@ class swagger_codegen::langs (
   }
 
   package { 'nodejs-npm':
-    ensure   => $nodejs_npm_version,
+    ensure   => $npm_version,
     provider => 'apk',
   }
 
@@ -52,7 +52,7 @@ class swagger_codegen::langs (
   }
 
   package { 'php5':
-    ensure   => $php5_version,
+    ensure   => $php_version,
     provider => 'apk',
   }
 
