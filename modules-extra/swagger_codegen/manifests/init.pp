@@ -1,0 +1,3 @@
+class swagger_codegen (
+) {
+}
