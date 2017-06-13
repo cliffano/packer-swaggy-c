@@ -12,24 +12,31 @@ The Docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). I
 Installation
 ------------
 
-    npm install -g packer-swaggy-c
-
-Usage
------
-
 Create Docker image with languages provisioned using Puppet:
 
     make docker
 
-It will create `cliffano/swaggy-c` repository with `latest` tag.
+It will create an image with `cliffano/swaggy-c` repository and `latest` tag:
 
-```
-haku> docker images
+    haku> docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-cliffano/swaggy-c   latest              36417fe204e3        About an hour ago   979.5 MB
-alpine              latest              a41a7446062d        2 weeks ago         3.962 MB
-```
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    cliffano/swaggy-c   latest              36417fe204e3        About an hour ago   979.5 MB
+    alpine              latest              a41a7446062d        2 weeks ago         3.962 MB
+
+Usage
+-----
+
+You can then execute `swaggy-c` that's already installed within the container:
+
+    docker run \
+      --workdir /opt/workspace \
+      -v $(pwd):/opt/workspace \
+      -t cliffano/swaggy-c \
+      swaggy-c \
+      --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+      --api-spec path/to/spec.yml \
+      javascript-gen
 
 Colophon
 --------
