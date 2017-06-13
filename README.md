@@ -21,6 +21,16 @@ Create Docker image with languages provisioned using Puppet:
 
     make docker
 
+It will create `cliffano/swaggy-c` repository with `latest` tag.
+
+```
+haku> docker images
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+cliffano/swaggy-c   latest              36417fe204e3        About an hour ago   979.5 MB
+alpine              latest              a41a7446062d        2 weeks ago         3.962 MB
+```
+
 Colophon
 --------
 
