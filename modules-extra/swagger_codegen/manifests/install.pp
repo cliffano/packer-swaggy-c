@@ -1,6 +1,6 @@
 class swagger_codegen::install (
   $revision = 'master',
-  $base_dir = '/tmp',
+  $base_dir = '/opt/swagger-codegen',
 ) {
 
   package { 'git':
