@@ -9,14 +9,24 @@ Packer Swaggy C is a Packer builder for a Docker image that contains most langua
 
 The Docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). It aims to have all Swagger CodeGen supported languages installed, along with Swagger CodeGen CLI jar and [Swaggy C](https://github.com/cliffano/swaggy-c).
 
+This is handy when you have an OpenAPI spec and you want to build multiple API clients without having to install the languages support one by one.
+
+Supported Swagger CodeGen languages: javascript, python, ruby. More coming soon!
+
 Installation
 ------------
 
-Create Docker image with languages provisioned using Puppet:
+Pull Swaggy C Docker image from Docker Hub:
 
+    docker pull cliffano/swaggy-c
+
+Or alternatively, you can create the Docker image locally:
+
+    git clone https://github.com/cliffano/packer-swaggy-c
+    cd packer-swaggy-c
     make docker
 
-It will create an image with `cliffano/swaggy-c` repository and `latest` tag:
+An image with `cliffano/swaggy-c` repository and `latest` tag should show up:
 
     haku> docker images
 
@@ -27,7 +37,7 @@ It will create an image with `cliffano/swaggy-c` repository and `latest` tag:
 Usage
 -----
 
-You can then execute `swaggy-c` that's already installed within the container:
+You can then execute `swaggy-c` for generating the API clients, Swaggy C and Swagger CodeGen are already installed within the container:
 
     docker run \
       --workdir /opt/workspace \
@@ -37,6 +47,8 @@ You can then execute `swaggy-c` that's already installed within the container:
       --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
       --api-spec path/to/spec.yml \
       javascript-gen
+
+The sample above uses the current working directory as the workspace. The generated API clients will be written to `generated/` directory.
 
 Colophon
 --------
