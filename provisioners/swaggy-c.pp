@@ -11,3 +11,8 @@ vcsrepo { '/opt/swaggy-c':
 exec { '/usr/bin/npm link':
   cwd => '/opt/swaggy-c',
 }
+
+file { '/usr/local/bin/swaggy-c':
+  ensure => link,
+  target => '/opt/swaggy-c/bin/swaggy-c',
+}
