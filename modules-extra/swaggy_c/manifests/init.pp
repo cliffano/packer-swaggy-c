@@ -1,0 +1,3 @@
+class swaggy_c (
+) {
+}
