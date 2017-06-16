@@ -20,7 +20,10 @@ docker:
 		packer build \
 		templates/$@.json
 
+docker-publish:
+	docker push cliffano/swaggy-c:latest
+
 tools:
 	gem install puppet-lint r10k
 
-.PHONY: ci clean deps lint docker tools
+.PHONY: ci clean deps lint docker docker-publish tools
