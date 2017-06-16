@@ -1,4 +1,5 @@
 class swagger_codegen::langs (
+  $bundler_version  = '1.15.1',
   $erlang_version   = '19.3.0-r3',
   $ghc_version      = '8.0.2-r6',
   $go_version       = '1.8.1-r0',
@@ -9,6 +10,8 @@ class swagger_codegen::langs (
   $perl_version     = '5.24.1-r2',
   $php_version      = '5.6.30-r0',
   $python_version   = '2.7.12-r0',
+  $rspec_version    = '3.6.0',
+  $ruby_version     = '2.4.1-r4',
 ) {
 
   package { 'erlang':
@@ -59,6 +62,21 @@ class swagger_codegen::langs (
   package { 'python':
     ensure   => $python_version,
     provider => 'apk',
+  }
+
+  package { 'ruby':
+    ensure   => $ruby_version,
+    provider => 'apk',
+  }
+
+  package { 'bundler':
+    ensure   => $bundler_version,
+    provider => gem;
+  }
+
+  package { 'rspec':
+    ensure   => $rspec_version,
+    provider => gem;
   }
 
 }
