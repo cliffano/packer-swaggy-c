@@ -8,7 +8,8 @@ package { 'make':
   provider => 'apk',
 }
 
+include swagger_codegen
+include swagger_codegen::install
 include swagger_codegen::langs::javascript
 include swagger_codegen::langs::ruby
-include swagger_codegen::install
 include swaggy_c::install

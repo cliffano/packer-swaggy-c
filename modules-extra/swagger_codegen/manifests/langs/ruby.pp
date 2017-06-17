@@ -3,7 +3,13 @@ class swagger_codegen::langs::ruby (
   $ioconsole_version = '0.4.6',
   $rspec_version     = '3.6.0',
   $ruby_version      = '2.4.1-r4',
+  $rubydev_version   = '2.4.1-r4',
 ) {
+
+  package { 'ruby-dev':
+    ensure   => $rubydev_version,
+    provider => 'apk',
+  }
 
   package { 'ruby':
     ensure   => $ruby_version,
