@@ -11,9 +11,11 @@ lint:
 		--fail-on-warnings \
 		--no-documentation-check \
 		provisioners/*.pp \
-		modules-extra/*/manifests/*.pp
+		modules-extra/*/manifests/*.pp \
+		modules-extra/*/manifests/langs/*.pp
 	shellcheck \
-		provisioners/*.sh
+		provisioners/*.sh \
+		modules-extra/*/files/langs/*.sh
 
 docker:
 	mkdir -p logs/
