@@ -4,6 +4,7 @@ class swagger_codegen::langs::ruby (
   $rspec_version     = '3.6.0',
   $ruby_version      = '2.4.1-r4',
   $rubydev_version   = '2.4.1-r4',
+  $bin_dir           = '/opt/swagger-codegen/bin/',
 ) {
 
   package { 'ruby-dev':
@@ -21,14 +22,20 @@ class swagger_codegen::langs::ruby (
     provider => gem;
   }
 
-  package { 'io-console':
-    ensure   => $ioconsole_version,
-    provider => gem;
-  }
+  #package { 'io-console':
+  #  ensure   => $ioconsole_version,
+  #  provider => gem;
+  #}
 
   package { 'rspec':
     ensure   => $rspec_version,
     provider => gem;
+  }
+
+  file { "${bin_dir}/ruby-info.sh":
+    ensure  => present,
+    content => file('langs/ruby-info.sh'),
+    mode    => '0755',
   }
 
 }
