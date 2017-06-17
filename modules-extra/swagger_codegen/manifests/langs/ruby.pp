@@ -1,5 +1,6 @@
 class swagger_codegen::langs::ruby (
   $bundler_version       = '1.15.1',
+  $rdoc_version         = '5.1.0',
   $rspec_version         = '3.6.0',
   $ruby_version          = '2.4.1-r4',
   $rubydev_version       = '2.4.1-r4',
@@ -35,6 +36,11 @@ class swagger_codegen::langs::ruby (
 
   package { 'rspec':
     ensure   => $rspec_version,
+    provider => gem;
+  }
+
+  package { 'rdoc':
+    ensure   => $rdoc_version,
     provider => gem;
   }
 
