@@ -15,9 +15,9 @@ class swagger_codegen::langs::javascript (
   }
 
   file { "${bin_dir}/javascript-info.sh":
-    ensure  => present,
-    content => file('langs/javascript-info.sh'),
-    mode    => '0755',
+    ensure => present,
+    source => 'puppet:///modules/swagger_codegen/langs/javascript-info.sh',
+    mode   => '0755',
   }
 
 }

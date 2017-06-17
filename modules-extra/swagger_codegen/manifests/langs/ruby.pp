@@ -33,9 +33,9 @@ class swagger_codegen::langs::ruby (
   }
 
   file { "${bin_dir}/ruby-info.sh":
-    ensure  => present,
-    content => file('langs/ruby-info.sh'),
-    mode    => '0755',
+    ensure => present,
+    source => 'puppet:///modules/swagger_codegen/langs/ruby-info.sh',
+    mode   => '0755',
   }
 
 }
