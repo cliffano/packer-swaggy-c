@@ -4,7 +4,7 @@ class swagger_codegen::langs::java (
 ) {
 
   package { 'openjdk7':
-    ensure   => $openjdk_version,
+    ensure   => $openjdk7_version,
     provider => 'apk',
   }
 
