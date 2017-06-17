@@ -4,6 +4,7 @@ class swagger_codegen::langs::ruby (
   $ruby_version          = '2.4.1-r4',
   $rubydev_version       = '2.4.1-r4',
   $rubyioconsole_version = '2.2.4-r0',
+  $rubyirb_version       = '2.4.1-r4',
   $rubyjson_version      = '2.4.1-r4',
   $rubyrdoc_version      = '2.4.1-r4',
   $bin_dir               = '/opt/swagger-codegen/bin/',
@@ -21,6 +22,11 @@ class swagger_codegen::langs::ruby (
 
   package { 'ruby-io-console':
     ensure   => $rubyioconsole_version,
+    provider => 'apk';
+  }
+
+  package { 'ruby-irb':
+    ensure   => $rubyirb_version,
     provider => 'apk';
   }
 
