@@ -1,10 +1,10 @@
 class swagger_codegen (
-  $gcc_version = '6.3.0-r4',
-  $base_dir    = '/opt/swagger-codegen',
+  $buildbase_version = '0.5-r0',
+  $base_dir          = '/opt/swagger-codegen',
 ) {
 
-  package { 'gcc':
-    ensure   => $gcc_version,
+  package { 'build-base':
+    ensure   => $buildbase_version,
     provider => 'apk',
   }
 

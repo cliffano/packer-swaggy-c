@@ -3,11 +3,6 @@ package { 'git':
   provider => 'apk',
 }
 
-package { 'make':
-  ensure   => '4.2.1-r0',
-  provider => 'apk',
-}
-
 include swagger_codegen
 include swagger_codegen::install
 include swagger_codegen::langs::erlang
