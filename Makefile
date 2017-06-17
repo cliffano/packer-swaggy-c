@@ -9,7 +9,9 @@ deps:
 lint:
 	puppet-lint \
 		--fail-on-warnings \
-		provisioners/*.pp
+		--no-documentation-check \
+		provisioners/*.pp \
+		modules-extra/*/manifests/*.pp
 	shellcheck \
 		provisioners/*.sh
 
