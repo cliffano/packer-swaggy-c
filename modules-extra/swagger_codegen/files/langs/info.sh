@@ -5,4 +5,6 @@ set -o errexit
 echo "bash version: $(bash --version)"
 
 # display all languages info
-./*-info.sh
+for lang_info in *-info.sh; do
+  bash "$lang_info" -H
+done
