@@ -14,4 +14,5 @@ include swagger_codegen::langs::php
 include swagger_codegen::langs::python
 include swagger_codegen::langs::ruby
 
+include swaggy_c
 include swaggy_c::install
