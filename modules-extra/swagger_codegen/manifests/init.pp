@@ -22,7 +22,9 @@ class swagger_codegen (
     mode   => '0755',
   } -> file { "${base_dir}/bin/info.sh":
     ensure => present,
-    source => 'puppet:///modules/swagger_codegen/langs/info.sh',
+    content => epp('swagger_codegen/info.sh.epp', {
+      bin_dir => "${base_dir}/bin/",
+    }),
     mode   => '0755',
   }
 
