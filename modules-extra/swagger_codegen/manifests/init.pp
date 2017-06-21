@@ -21,11 +21,11 @@ class swagger_codegen (
     ensure => directory,
     mode   => '0755',
   } -> file { "${base_dir}/bin/info.sh":
-    ensure => present,
+    ensure  => present,
     content => epp('swagger_codegen/info.sh.epp', {
       bin_dir => "${base_dir}/bin/",
     }),
-    mode   => '0755',
+    mode    => '0755',
   }
 
 }
