@@ -1,9 +1,6 @@
 #!/bin/sh
 
 /opt/swagger-codegen/bin/info.sh
-
-# echo "typescript version: $(tsc --version)"
-
-echo "swaggy-c version: $(swaggy-c --version)"
+/opt/swaggy-c/bin/info.sh
 
 rm -rf /tmp/packer-swaggy-c/
