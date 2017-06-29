@@ -2,6 +2,8 @@
 
 [![Build Status](https://img.shields.io/travis/cliffano/packer-swaggy-c.svg)](http://travis-ci.org/cliffano/packer-swaggy-c)
 
+[![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/swaggy-c.svg)](https://hub.docker.com/r/cliffano/swaggy-c/)
+
 Packer Swaggy C
 ---------------
 
@@ -11,7 +13,7 @@ The Docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). I
 
 This is handy when you have an OpenAPI spec and you want to build multiple API clients without having to install the languages support one by one.
 
-Supported Swagger CodeGen languages: javascript, python, ruby. More coming soon!
+Supported Swagger CodeGen languages: Java, JavaScript, Python, Ruby. More coming soon!
 
 Installation
 ------------
@@ -37,7 +39,7 @@ An image with `cliffano/swaggy-c` repository and `latest` tag should show up:
 Usage
 -----
 
-You can then execute `swaggy-c` for generating the API clients, Swaggy C and Swagger CodeGen are already installed within the container:
+Execute `swaggy-c` to generate the API clients, Swaggy C and Swagger CodeGen are already installed within the container:
 
     docker run \
       --workdir /opt/workspace \
@@ -48,7 +50,14 @@ You can then execute `swaggy-c` for generating the API clients, Swaggy C and Swa
       --api-spec path/to/spec.yml \
       javascript-gen
 
-The sample above uses the current working directory as the workspace. The generated API clients will be written to `generated/` directory.
+The sample above uses the current working directory as the workspace. The generated API clients will be written to `{lang}/generated/` directory.
+
+What's inside
+-------------
+
+| `/usr/local/bin/swaggy-c` | Swaggy C CLI command, available in `PATH` |
+| `/opt/swaggy-c/bin/info.sh` | Display versions info of all provisioned languages |
+| `/opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar` | Swagger CodeGen CLI jar, use this when you want to run the latest jar from the time when the Docker image was created |
 
 Colophon
 --------
