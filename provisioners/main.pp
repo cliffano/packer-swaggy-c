@@ -13,6 +13,7 @@ include swagger_codegen::langs::perl
 include swagger_codegen::langs::php
 include swagger_codegen::langs::python
 include swagger_codegen::langs::ruby
+include swagger_codegen::langs::typescript
 
 include swaggy_c
 include swaggy_c::install
