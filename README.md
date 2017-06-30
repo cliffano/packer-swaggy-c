@@ -54,11 +54,12 @@ The sample above uses the current working directory as the workspace. The genera
 What's inside
 -------------
 
-|-|-|-|
+| Path | Description |
+|-|-|
 | `/usr/local/bin/swaggy-c` | Swaggy C CLI command, available in `PATH` |
 | `/opt/swaggy-c/bin/info.sh` | Display versions info of all provisioned languages |
 | `/opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar` | Swagger CodeGen CLI jar, use this when you want to run the latest jar from the time when the Docker image was created |
-|-|-|-|
+|-|-|
 
 Colophon
 --------
