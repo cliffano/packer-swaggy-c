@@ -1,5 +1,6 @@
 class swagger_codegen::langs::typescript (
   $typescript_version = '2.4.1',
+  $bin_dir            = '/opt/swagger-codegen/bin/',
 ) {
 
   include swagger_codegen::langs::javascript
