@@ -6,14 +6,14 @@ class scala (
   wget::fetch { "https://downloads.lightbend.com/scala/${version}/scala-${version}.rpm":
     destination => "${stage_dir}/scala-${version}.rpm",
   } -> exec { "alien -i ${stage_dir}/scala-${version}.rpm --scripts":
-      path => [
-        '/usr/local/sbin',
-        '/usr/local/bin',
-        '/usr/sbin',
-        '/usr/bin',
-        '/sbin',
-        '/bin',
-      ],
-    }
+    path => [
+      '/usr/local/sbin',
+      '/usr/local/bin',
+      '/usr/sbin',
+      '/usr/bin',
+      '/sbin',
+      '/bin',
+    ],
+  }
 
 }

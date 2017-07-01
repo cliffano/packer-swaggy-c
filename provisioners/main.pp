@@ -3,6 +3,11 @@ package { 'git':
   provider => apk,
 }
 
+package { 'rpm':
+  ensure   => '4.13.0-r1',
+  provider => apk,
+}
+
 package { 'alien':
   ensure   => '8.95-r0',
   provider => apk,
