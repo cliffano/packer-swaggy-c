@@ -3,9 +3,8 @@ class scala (
   $stage_dir = '/tmp',
 ) {
 
-  archive { "${stage_dir}/scala-${version}.rpm":
-    ensure => present,
-    source => "https://downloads.lightbend.com/scala/${version}/scala-${version}.rpm",
+  wget::fetch { "https://downloads.lightbend.com/scala/${version}/scala-${version}.rpm":
+    destination => $stage_dir,
   }
 
   package { 'scala':
