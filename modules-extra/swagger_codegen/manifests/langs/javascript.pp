@@ -1,13 +1,17 @@
 class swagger_codegen::langs::javascript (
-  $nodejs_version = 'v8',
+  $nodejs_version = '6.10.3-r0',
+  $npm_version    = '6.10.3-r0',
   $bin_dir        = '/opt/swagger-codegen/bin/',
 ) {
 
-  # Use willdurand/nodejs module instead of
-  # nodejs and nodejs-npm packages from apk
-  # due to npm package provider availability
-  class { 'nodejs':
-    version => 'v6.0.0',
+  package { 'nodejs':
+    ensure   => $nodejs_version,
+    provider => 'apk',
+  }
+
+  package { 'nodejs-npm':
+    ensure   => $npm_version,
+    provider => 'apk',
   }
 
   file { "${bin_dir}/javascript-info.sh":
