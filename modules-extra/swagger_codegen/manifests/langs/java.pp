@@ -1,11 +1,17 @@
 class swagger_codegen::langs::java (
   $maven_version    = '3.5.0',
   $openjdk7_version = '7.131.2.6.9-r1',
+  $openjdk8_version = '8.131.11-r2',
   $bin_dir          = '/opt/swagger-codegen/bin/',
 ) {
 
   package { 'openjdk7':
     ensure   => $openjdk7_version,
+    provider => 'apk',
+  }
+
+  package { 'openjdk8':
+    ensure   => $openjdk8_version,
     provider => 'apk',
   }
 
