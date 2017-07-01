@@ -7,7 +7,12 @@ class swagger_codegen::langs::typescript (
 
   exec { "npm install -g typescript@${typescript_version}":
     path => [
+      '/usr/local/sbin',
       '/usr/local/bin',
+      '/usr/sbin',
+      '/usr/bin',
+      '/sbin',
+      '/bin',
     ],
   }
 
