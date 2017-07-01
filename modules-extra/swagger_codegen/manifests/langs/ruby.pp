@@ -1,52 +1,25 @@
 class swagger_codegen::langs::ruby (
-  $bundler_version       = '1.15.1',
-  $rspec_version         = '3.6.0',
-  $ruby_version          = '2.4.1-r4',
-  $rubydev_version       = '2.4.1-r4',
-  $rubyioconsole_version = '2.2.4-r0',
-  $rubyirb_version       = '2.4.1-r4',
-  $rubyjson_version      = '2.4.1-r4',
-  $rubyrdoc_version      = '2.4.1-r4',
-  $bin_dir               = '/opt/swagger-codegen/bin/',
+  $bundler_version  = '1.15.1',
+  $ruby_version     = '2.3.3',
+  $rubydev_version  = '2.3.34',
+  $rubyjson_version = '2.0.1',
+  $bin_dir          = '/opt/swagger-codegen/bin/',
 ) {
 
   package { 'ruby-dev':
-    ensure   => $rubydev_version,
-    provider => 'apk',
+    ensure => $rubydev_version,
   }
 
   package { 'ruby':
-    ensure   => $ruby_version,
-    provider => 'apk',
-  }
-
-  package { 'ruby-io-console':
-    ensure   => $rubyioconsole_version,
-    provider => 'apk';
-  }
-
-  package { 'ruby-irb':
-    ensure   => $rubyirb_version,
-    provider => 'apk';
+    ensure => $ruby_version,
   }
 
   package { 'ruby-json':
-    ensure   => $rubyjson_version,
-    provider => 'apk';
-  }
-
-  package { 'ruby-rdoc':
-    ensure   => $rubyrdoc_version,
-    provider => 'apk';
+    ensure => $rubyjson_version,
   }
 
   package { 'bundler':
     ensure   => $bundler_version,
-    provider => gem;
-  }
-
-  package { 'rspec':
-    ensure   => $rspec_version,
     provider => gem;
   }
 

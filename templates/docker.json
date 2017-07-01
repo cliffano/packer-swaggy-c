@@ -4,9 +4,9 @@
   "builders": [
     {
       "type": "docker",
-      "image": "alpine",
+      "image": "ubuntu",
       "commit": true,
-      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/sh"]
+      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/bash"]
     }
   ],
   "provisioners": [

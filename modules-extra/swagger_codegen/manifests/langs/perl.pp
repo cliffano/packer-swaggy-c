@@ -1,11 +1,10 @@
 class swagger_codegen::langs::perl (
-  $perl_version = '5.24.1-r2',
+  $perl_version = '5.24.1',
   $bin_dir      = '/opt/swagger-codegen/bin/',
 ) {
 
   package { 'perl':
-    ensure   => $perl_version,
-    provider => 'apk',
+    ensure => $perl_version,
   }
 
   file { "${bin_dir}/perl-info.sh":

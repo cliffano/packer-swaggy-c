@@ -1,11 +1,10 @@
 class swagger_codegen::langs::go (
-  $go_version = '1.8.1-r0',
-  $bin_dir    = '/opt/swagger-codegen/bin/',
+  $golang_version = '1.8',
+  $bin_dir        = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'go':
-    ensure   => $go_version,
-    provider => 'apk',
+  package { 'golang':
+    ensure => $golang_version,
   }
 
   file { "${bin_dir}/go-info.sh":

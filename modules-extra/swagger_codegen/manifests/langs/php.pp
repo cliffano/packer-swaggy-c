@@ -1,11 +1,10 @@
 class swagger_codegen::langs::php (
-  $php5_version = '5.6.30-r0',
-  $bin_dir      = '/opt/swagger-codegen/bin/',
+  $php_version = '7.1',
+  $bin_dir     = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'php5':
-    ensure   => $php5_version,
-    provider => 'apk',
+  package { 'php':
+    ensure => $php_version,
   }
 
   file { "${bin_dir}/php-info.sh":
