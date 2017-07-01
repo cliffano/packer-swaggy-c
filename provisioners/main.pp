@@ -1,6 +1,11 @@
 package { 'git':
   ensure   => '2.13.0-r0',
-  provider => 'apk',
+  provider => apk,
+}
+
+package { 'rpm':
+  ensure   => '4.13.0-r1',
+  provider => apk,
 }
 
 include swagger_codegen
