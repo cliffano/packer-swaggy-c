@@ -5,9 +5,10 @@ class swagger_codegen::langs::typescript (
 
   include swagger_codegen::langs::javascript
 
-  package { 'typescript':
-    ensure   => $typescript_version,
-    provider => 'npm',
+  exec { "npm install -g typescript@${typescript_version}":
+    path => [
+      '/usr/local/bin',
+    ],
   }
 
   file { "${bin_dir}/typescript-info.sh":
