@@ -7,7 +7,7 @@ class swagger_codegen::langs::typescript (
 
   package { 'typescript':
     ensure   => $typescript_version,
-    provider => 'npm',
+    provider => npm,
   }
 
   file { "${bin_dir}/typescript-info.sh":
