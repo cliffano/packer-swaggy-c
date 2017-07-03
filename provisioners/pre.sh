@@ -8,7 +8,7 @@ cd /tmp/packer-swaggy-c/
 # https://github.com/puppetlabs/puppet-in-docker/blob/master/puppet-agent-ubuntu/Dockerfile
 # Will switch to Puppetlabs' Docker image if they provide puppet-masterless
 apt-get update
-apt-get install --no-install-recommends -y wget  ca-certificates lsb-release sudo apt-utils
+apt-get install --no-install-recommends -y wget  ca-certificates lsb-release sudo apt-utils software-properties-common python-software-properties
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 dpkg -i puppetlabs-release-pc1-xenial.deb
 rm puppetlabs-release-pc1-xenial.deb
