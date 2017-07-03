@@ -2,17 +2,6 @@ class swagger_codegen (
   $base_dir = '/opt/swagger-codegen',
 ) {
 
-  exec { 'apt-get update':
-    path => [
-      '/usr/local/sbin',
-      '/usr/local/bin',
-      '/usr/sbin',
-      '/usr/bin',
-      '/sbin',
-      '/bin',
-    ],
-  }
-
   file { $base_dir:
     ensure => directory,
     mode   => '0755',
