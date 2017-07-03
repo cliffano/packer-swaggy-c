@@ -4,6 +4,8 @@ class swagger_codegen::install (
 ) {
 
   include swagger_codegen::langs::java
+  
+  include git
 
   vcsrepo { $repo_dir:
     ensure   => present,
