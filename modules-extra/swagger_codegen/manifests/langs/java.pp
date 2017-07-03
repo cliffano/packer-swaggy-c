@@ -1,11 +1,15 @@
 class swagger_codegen::langs::java (
-  $maven_version    = '3.5.0',
-  $openjdk8_version = '8u131-b11',
-  $bin_dir          = '/opt/swagger-codegen/bin/',
+  $jdk8_version_major = '8u101',
+  $jdk8_version_minor = 'b13',
+  $maven_version      = '3.5.0',
+  $bin_dir            = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'openjdk-8-jdk':
-    ensure => $openjdk8_version,
+  java::oracle { 'jdk8' :
+    ensure        => 'present',
+    version_major => $jdk8_version_major,
+    version_minor => $jdk8_version_minor = 'b13',
+    java_se       => 'jdk',
   }
 
   class { 'maven::maven':

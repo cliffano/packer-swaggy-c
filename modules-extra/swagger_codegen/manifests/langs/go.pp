@@ -1,11 +1,8 @@
 class swagger_codegen::langs::go (
-  $golang_version = '1.8',
-  $bin_dir        = '/opt/swagger-codegen/bin/',
+  $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'golang':
-    ensure => $golang_version,
-  }
+  include 'golang'
 
   file { "${bin_dir}/go-info.sh":
     ensure => present,

@@ -1,7 +1,4 @@
-package { 'git':
-  ensure   => '2.13.0-r0',
-  provider => apk,
-}
+include git
 
 include swagger_codegen
 include swagger_codegen::install

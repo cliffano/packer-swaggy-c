@@ -17,7 +17,7 @@
     {
       "type": "puppet-masterless",
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
-      "extra_arguments": "--debug",
+      "extra_arguments": "--debug -e 'include epel'",
       "staging_directory": "/tmp/packer-swaggy-c",
       "manifest_file": "provisioners/main.pp",
       "module_paths": [
