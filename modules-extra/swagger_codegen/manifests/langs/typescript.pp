@@ -1,19 +1,12 @@
 class swagger_codegen::langs::typescript (
-  $typescript_version = '2.4.1',
-  $bin_dir            = '/opt/swagger-codegen/bin/',
+  $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
   include swagger_codegen::langs::javascript
 
-  exec { "npm install -g typescript@${typescript_version}":
-    path => [
-      '/usr/local/sbin',
-      '/usr/local/bin',
-      '/usr/sbin',
-      '/usr/bin',
-      '/sbin',
-      '/bin',
-    ],
+  package { 'typescript':
+    ensure   => latest,
+    provider => npm;
   }
 
   file { "${bin_dir}/typescript-info.sh":
