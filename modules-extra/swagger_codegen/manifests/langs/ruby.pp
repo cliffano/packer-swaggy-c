@@ -7,6 +7,16 @@ class swagger_codegen::langs::ruby (
     gems_version => 'latest',
   }
 
+  package { 'bundler':
+    ensure   => latest,
+    provider => gem;
+  }
+
+  package { 'rspec':
+    ensure   => latest,
+    provider => gem;
+  }
+
   file { "${bin_dir}/ruby-info.sh":
     ensure => present,
     source => 'puppet:///modules/swagger_codegen/langs/ruby-info.sh',
