@@ -1,15 +1,13 @@
 class swagger_codegen::langs::python (
-  $pip_version    = '9.0.1-2',
-  $python_version = '2.7.13',
-  $bin_dir        = '/opt/swagger-codegen/bin/',
+  $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'python':
-    ensure => $python_version,
-  }
-
-  package { 'python-pip':
-    ensure => $pip_version,
+  class { 'python' :
+    version    => 'system',
+    pip        => 'present',
+    dev        => 'present',
+    virtualenv => 'present',
+    gunicorn   => 'absent',
   }
 
   file { "${bin_dir}/python-info.sh":

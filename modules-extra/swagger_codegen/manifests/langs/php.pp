@@ -1,10 +1,15 @@
 class swagger_codegen::langs::php (
-  $php_version = '7.1',
-  $bin_dir     = '/opt/swagger-codegen/bin/',
+  $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
-  package { 'php':
-    ensure => $php_version,
+  class { '::php':
+    ensure       => latest,
+    manage_repos => true,
+    fpm          => true,
+    dev          => true,
+    composer     => true,
+    pear         => true,
+    phpunit      => false,
   }
 
   file { "${bin_dir}/php-info.sh":
