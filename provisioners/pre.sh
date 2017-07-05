@@ -4,6 +4,9 @@
 mkdir -p /tmp/packer-swaggy-c/
 cd /tmp/packer-swaggy-c/ || exit 123
 
+# Set locale to en_US UTF-8
+localectl set-locale LANG=en_US.UTF-8 LANGUAGE="en_US:en"
+
 # Install Puppet, adapted from
 # https://github.com/puppetlabs/puppet-in-docker/blob/master/puppet-agent-ubuntu/Dockerfile
 # Will switch to Puppetlabs' Docker image if they provide puppet-masterless
