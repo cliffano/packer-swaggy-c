@@ -12,7 +12,7 @@ include git
 
 include swagger_codegen
 include swagger_codegen::install
-#include swagger_codegen::langs::erlang
+include swagger_codegen::langs::erlang
 include swagger_codegen::langs::go
 include swagger_codegen::langs::java
 include swagger_codegen::langs::javascript
