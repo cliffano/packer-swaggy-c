@@ -1,8 +1,10 @@
 forge 'https://forgeapi.puppetlabs.com'
 
-mod 'example42-perl', '2.0.25'
-mod 'garethr-erlang', '0.3.0'
+mod 'example42-puppi', '2.2.3'
+mod 'fatmcgav-perl', '0.1.0'
+mod 'garethr-erlang', :git => 'https://github.com/garethr/garethr-erlang'
 mod 'garethr-golang', '0.1.1'
+mod 'garethr-scala', '0.1.2'
 mod 'maestrodev-maven', '1.4.0'
 mod 'maestrodev-wget', '1.7.3'
 mod 'puppet-archive', '1.3.0'
