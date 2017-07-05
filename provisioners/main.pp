@@ -20,7 +20,7 @@ include swagger_codegen::langs::javascript
 #include swagger_codegen::langs::php
 include swagger_codegen::langs::python
 include swagger_codegen::langs::ruby
-#include swagger_codegen::langs::scala
+include swagger_codegen::langs::scala
 include swagger_codegen::langs::typescript
 
 include swaggy_c
