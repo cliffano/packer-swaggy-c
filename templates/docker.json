@@ -6,7 +6,10 @@
       "type": "docker",
       "image": "ubuntu",
       "commit": true,
-      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/bash"]
+      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/bash"],
+      "changes": [
+        "ENV LANG en_US.UTF-8"
+      ]
     }
   ],
   "provisioners": [
