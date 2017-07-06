@@ -2,7 +2,7 @@ class swagger_codegen::langs::perl (
   $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
-  class { 'perl': }
+  include ::perl
 
   file { "${bin_dir}/perl-info.sh":
     ensure => present,
