@@ -22,9 +22,9 @@ class swagger_codegen::langs::kotlin (
   include sdkman
 
   sdkman::package { 'kotlin':
+    ensure     => present,
     version    => '1.1.3',
     is_default => true,
-    ensure     => present,
   }
 
   file { "${bin_dir}/kotlin-info.sh":

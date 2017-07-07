@@ -3,7 +3,7 @@ class swagger_codegen::langs::clojure (
 ) {
 
   include swagger_codegen::langs::java
-  
+
   include leiningen
 
   file { "${bin_dir}/clojure-info.sh":
