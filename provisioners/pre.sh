@@ -18,7 +18,6 @@ rm -rf /var/lib/apt/lists/*
 PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
 
 # Set locale to en_US UTF-8
-dpkg-reconfigure locales
 locale-gen en_US.UTF-8
 update-locale LANG=en_US.UTF-8
 
