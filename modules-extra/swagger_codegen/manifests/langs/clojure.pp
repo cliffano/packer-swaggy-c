@@ -2,6 +2,8 @@ class swagger_codegen::langs::clojure (
   $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
+  include leiningen
+
   file { "${bin_dir}/clojure-info.sh":
     ensure => present,
     source => 'puppet:///modules/swagger_codegen/langs/clojure-info.sh',
