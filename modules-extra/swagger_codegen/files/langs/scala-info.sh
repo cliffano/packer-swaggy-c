@@ -5,5 +5,5 @@ set -o errexit
 echo "****************************************"
 echo "* Scala info"
 echo "****************************************"
-#echo "scala version: $(scala -version)"
-echo "sbt version: $(sbt --version)"
+echo "scala version: $(scala -version)"
+echo "sbt version: $(sbt sbtVersion)"
