@@ -2,6 +2,8 @@ class swagger_codegen::langs::clojure (
   $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
+  include swagger_codegen::langs::java
+  
   include leiningen
 
   file { "${bin_dir}/clojure-info.sh":
