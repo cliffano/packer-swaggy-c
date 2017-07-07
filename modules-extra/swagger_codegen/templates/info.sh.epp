@@ -7,7 +7,7 @@ echo "bash version: $(bash --version)"
 echo "****************************************"
 echo "* Swagger CodeGen info"
 echo "****************************************"
-echo "swagger-codegen version: $(java -jar <%= repo_dir %>/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar version)"
+echo "swagger-codegen version: $(java -jar <%= $repo_dir %>/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar version)"
 
 # display all languages info
 for lang_info in <%= $bin_dir %>/*-info.sh; do
