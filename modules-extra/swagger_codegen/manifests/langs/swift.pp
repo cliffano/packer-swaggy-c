@@ -5,11 +5,11 @@ class swagger_codegen::langs::swift (
 ) {
 
   archive { $langs_dir:
-    ensure        => present,
-    extract       => true,
-    extract_path  => $langs_dir,
-    source        => $source_url,
-    cleanup       => true,
+    ensure       => present,
+    extract      => true,
+    extract_path => $langs_dir,
+    source       => $source_url,
+    cleanup      => true,
   }
 
   file { "${bin_dir}/swift-info.sh":
