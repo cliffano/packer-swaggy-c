@@ -15,6 +15,9 @@ class swagger_codegen (
       repo_dir => "${base_dir}/repo/",
     }),
     mode    => '0755',
+  } -> file { "${base_dir}/langs/":
+    ensure => directory,
+    mode   => '0755',
   }
 
 }

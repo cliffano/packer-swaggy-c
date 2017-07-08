@@ -5,4 +5,4 @@ set -o errexit
 echo "****************************************"
 echo "* Kotlin info"
 echo "****************************************"
-#echo "kotlin version: $(kotlin --version)"
+echo "kotlin version: <%= $version %>"

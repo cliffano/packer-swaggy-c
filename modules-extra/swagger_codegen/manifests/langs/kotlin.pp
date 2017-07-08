@@ -1,5 +1,6 @@
 class swagger_codegen::langs::kotlin (
-  $bin_dir = '/opt/swagger-codegen/bin/',
+  $kotlin_version = '1.1.3',
+  $bin_dir        = '/opt/swagger-codegen/bin/',
 ) {
 
   include swagger_codegen::langs::java
@@ -23,14 +24,26 @@ class swagger_codegen::langs::kotlin (
 
   sdkman::package { 'kotlin':
     ensure     => present,
-    version    => '1.1.3',
+    version    => $kotlin_version,
     is_default => true,
   }
 
+  file { '/usr/local/bin/kotlin':
+    ensure => link,
+    target => '/root/.sdkman/candidates/kotlin/current/bin/kotlin',
+  }
+
+  file { '/usr/local/bin/kotlinc':
+    ensure => link,
+    target => '/root/.sdkman/candidates/kotlin/current/bin/kotlinc',
+  }
+
   file { "${bin_dir}/kotlin-info.sh":
-    ensure => present,
-    source => 'puppet:///modules/swagger_codegen/langs/kotlin-info.sh',
-    mode   => '0755',
+    ensure  => present,
+    content => epp('swagger_codegen/langs/kotlin-info.sh.epp', {
+      version => $kotlin_version,
+    }),
+    mode    => '0755',
   }
 
 }
