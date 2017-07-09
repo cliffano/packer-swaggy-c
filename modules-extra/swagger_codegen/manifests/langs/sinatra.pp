@@ -3,7 +3,7 @@ class swagger_codegen::langs::sinatra (
 ) {
 
   include sinatra
-  
+
   file { "${bin_dir}/sinatra-info.sh":
     ensure => present,
     source => 'puppet:///modules/swagger_codegen/langs/sinatra-info.sh',
