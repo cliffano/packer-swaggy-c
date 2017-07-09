@@ -1,8 +1,18 @@
 class swagger_codegen::langs::swift (
   $bin_dir    = '/opt/swagger-codegen/bin/',
   $langs_dir  = '/opt/swagger-codegen/langs/',
-  $source_url = 'https://swift.org/builds/ubuntu1510/swift-2.2-SNAPSHOT-2015-12-10-a/swift-2.2-SNAPSHOT-2015-12-10-a-ubuntu15.10.tar.gz',
+  $source_url = 'https://swift.org/builds/swift-3.1.1-release/ubuntu1604/swift-3.1.1-RELEASE/swift-3.1.1-RELEASE-ubuntu16.04.tar.gz',
 ) {
+
+  package { 'clang':
+    ensure   => latest,
+    provider => apt,
+  }
+
+  package { 'libicu-dev':
+    ensure   => latest,
+    provider => apt,
+  }
 
   archive { $langs_dir:
     ensure       => present,

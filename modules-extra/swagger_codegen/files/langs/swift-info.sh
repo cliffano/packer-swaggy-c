@@ -5,4 +5,4 @@ set -o errexit
 echo "****************************************"
 echo "* Swift info"
 echo "****************************************"
-#echo "swift version: $(swift --version)"
+echo "swift version: $(swift -version)"
