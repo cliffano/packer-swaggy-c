@@ -1,3 +1,4 @@
+# Adapted from https://itsfoss.com/use-swift-linux/
 class swagger_codegen::langs::swift (
   $bin_dir    = '/opt/swagger-codegen/bin/',
   $langs_dir  = '/opt/swagger-codegen/langs/',
