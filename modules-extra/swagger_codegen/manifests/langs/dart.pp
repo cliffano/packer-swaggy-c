@@ -3,18 +3,13 @@ class swagger_codegen::langs::dart (
   $bin_dir = '/opt/swagger-codegen/bin/',
 ) {
 
-  apt::ppa { 'ppa:libccd-debs/ppa': }
-
-  apt::ppa { 'ppa:fcl-debs/ppa': }
-
-  apt::ppa { 'ppa:dartsim/ppa': }
-
-  package { 'libdart-core5-dev':
-    ensure   => latest,
-    provider => apt,
-  }
-
-  package { 'libdart5-dev':
+  exec { 'apt-add-repository ppa:dartsim -- dart':
+    command => 'apt-add-repository ppa:dartsim',
+    path    => '/bin:/usr/bin',
+  } -> exec { 'apt-get update -- dart':
+    command => 'apt-get update',
+    path    => '/bin:/usr/bin',
+  } -> package { 'libdart6-all-dev':
     ensure   => latest,
     provider => apt,
   }
