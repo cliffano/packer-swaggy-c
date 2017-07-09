@@ -2,6 +2,7 @@ forge 'https://forgeapi.puppetlabs.com'
 
 mod 'example42-perl', '2.0.25'
 mod 'example42-puppi', '2.2.3'
+mod 'gajdaw-diverse_functions', '0.1.1'
 mod 'gajdaw-sinatra', '0.2.0'
 mod 'garethr-erlang', :git => 'https://github.com/garethr/garethr-erlang'
 mod 'garethr-golang', '0.1.1'
