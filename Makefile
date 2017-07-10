@@ -1,4 +1,4 @@
-ci: clean tools deps lint docker
+ci: clean tools deps lint docker docker-info
 
 clean:
 	rm -rf logs modules
@@ -23,6 +23,13 @@ docker:
 		PACKER_LOG=1 \
 		packer build \
 		templates/$@.json
+
+docker-info:
+	docker run \
+	  --workdir /opt/workspace \
+	  -v `pwd`:/opt/workspace \
+	  -t cliffano/swaggy-c \
+	  /opt/swagger-codegen/bin/info.sh
 
 docker-publish:
 	docker push cliffano/swaggy-c:latest
