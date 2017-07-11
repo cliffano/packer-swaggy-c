@@ -5,4 +5,4 @@ set -o errexit
 echo "****************************************"
 echo "* Dart info"
 echo "****************************************"
-#echo "dart version: $(dart --version)"
+echo "dart version: $(dart --version)"
