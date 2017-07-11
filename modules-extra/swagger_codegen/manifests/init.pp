@@ -1,5 +1,6 @@
 class swagger_codegen (
-  $base_dir = '/opt/swagger-codegen',
+  $base_dir  = '/opt/swagger-codegen',
+  $stage_dir = '/tmp/packer-swaggy-c',
 ) {
 
   file { $base_dir:
@@ -16,6 +17,9 @@ class swagger_codegen (
     }),
     mode    => '0755',
   } -> file { "${base_dir}/langs/":
+    ensure => directory,
+    mode   => '0755',
+  } -> file { "${stage_dir}":
     ensure => directory,
     mode   => '0755',
   }
