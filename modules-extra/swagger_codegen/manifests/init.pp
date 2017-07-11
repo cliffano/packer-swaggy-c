@@ -19,7 +19,7 @@ class swagger_codegen (
   } -> file { "${base_dir}/langs/":
     ensure => directory,
     mode   => '0755',
-  } -> file { "${stage_dir}":
+  } -> file { $stage_dir:
     ensure => directory,
     mode   => '0755',
   }

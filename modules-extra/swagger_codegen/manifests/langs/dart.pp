@@ -11,8 +11,8 @@ class swagger_codegen::langs::dart (
     timeout     => 0,
     verbose     => true,
   } -> package { 'dart':
-    name     => 'dart',
     ensure   => installed,
+    name     => 'dart',
     provider => dpkg,
     source   => "${stage_dir}/${archive_file}",
   }
