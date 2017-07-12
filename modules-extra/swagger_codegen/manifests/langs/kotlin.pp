@@ -5,23 +5,6 @@ class swagger_codegen::langs::kotlin (
 
   include swagger_codegen::langs::java
 
-  package { 'unzip':
-    ensure   => latest,
-    provider => apt,
-  }
-
-  package { 'zip':
-    ensure   => latest,
-    provider => apt,
-  }
-
-  package { 'curl':
-    ensure   => latest,
-    provider => apt,
-  }
-
-  include sdkman
-
   sdkman::package { 'kotlin':
     ensure     => present,
     version    => $kotlin_version,
