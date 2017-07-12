@@ -25,7 +25,7 @@ class swagger_codegen::langs::java (
     ensure   => latest,
     provider => apt,
   }
-  
+
   include sdkman
 
   file { "${bin_dir}/java-info.sh":
