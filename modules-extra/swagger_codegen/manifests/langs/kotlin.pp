@@ -12,11 +12,9 @@ class swagger_codegen::langs::kotlin (
   }
 
   file { "${bin_dir}/kotlin-info.sh":
-    ensure  => present,
-    content => epp('swagger_codegen/langs/kotlin-info.sh.epp', {
-      version => $kotlin_version,
-    }),
-    mode    => '0755',
+    ensure => present,
+    source => 'puppet:///modules/swagger_codegen/langs/kotlin-info.sh',
+    mode   => '0755',
   }
 
 }

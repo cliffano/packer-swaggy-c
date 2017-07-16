@@ -3,6 +3,6 @@ set -o nounset
 set -o errexit
 
 echo "****************************************"
-echo "* Kotlin info"
+echo "* Clojure info"
 echo "****************************************"
-echo "kotlin version: <%= $version %>"
+echo "leiningen version: $(sdk list leiningen)"

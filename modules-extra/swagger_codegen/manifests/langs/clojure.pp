@@ -12,11 +12,9 @@ class swagger_codegen::langs::clojure (
   }
 
   file { "${bin_dir}/clojure-info.sh":
-    ensure  => present,
-    content => epp('swagger_codegen/langs/clojure-info.sh.epp', {
-      leiningen_version => $leiningen_version,
-    }),
-    mode    => '0755',
+    ensure => present,
+    source => 'puppet:///modules/swagger_codegen/langs/clojure-info.sh',
+    mode   => '0755',
   }
 
 }
