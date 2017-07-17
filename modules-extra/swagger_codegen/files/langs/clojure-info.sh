@@ -2,7 +2,8 @@
 set -o nounset
 set -o errexit
 
-source /root/.sdkman/bin/sdkman-init.sh
+# shellcheck disable=SC1091
+. /root/.sdkman/bin/sdkman-init.sh
 
 echo "****************************************"
 echo "* Clojure info"
