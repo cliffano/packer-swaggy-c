@@ -9,8 +9,6 @@ echo "* Swagger CodeGen info"
 echo "****************************************"
 echo "swagger-codegen version: $(java -jar <%= $repo_dir %>/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar version)"
 
-source "/opt/sdkman/bin/sdkman-init.sh"
-
 # display all languages info
 for lang_info in <%= $bin_dir %>/*-info.sh; do
   bash "$lang_info" -H

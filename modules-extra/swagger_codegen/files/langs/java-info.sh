@@ -5,6 +5,6 @@ set -o errexit
 echo "****************************************"
 echo "* Java info"
 echo "****************************************"
+echo "sdk version: $(sdk --version)"
 echo "java version: $(java -version)"
 echo "maven version: $(mvn -version)"
-echo "sdk version: $(sdk version)"

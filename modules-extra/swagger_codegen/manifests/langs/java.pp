@@ -26,9 +26,7 @@ class swagger_codegen::langs::java (
     provider => apt,
   }
 
-  class { 'sdkman' :
-    homedir => '/opt/sdkman/',
-  }
+  include sdkman
 
   file { "${bin_dir}/java-info.sh":
     ensure => present,
