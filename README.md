@@ -12,7 +12,7 @@ The Docker image is based on [Ubuntu Linux](https://hub.docker.com/_/ubuntu/). I
 
 This is handy when you have an OpenAPI spec and you want to build multiple API clients without having to install the languages one by one.
 
-Supported Swagger CodeGen languages: Clojure, Dart, Erlang, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Scala, TypeScript. More coming soon!
+Supported Swagger CodeGen languages: Clojure, Dart, Erlang, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Scala, TypeScript. More to come!
 
 Installation
 ------------
@@ -21,7 +21,7 @@ Pull Swaggy C Docker image from Docker Hub:
 
     docker pull cliffano/swaggy-c
 
-Or alternatively, you can create the Docker image locally:
+Or alternatively, you can create the Docker image:
 
     git clone https://github.com/cliffano/packer-swaggy-c
     cd packer-swaggy-c
@@ -32,8 +32,8 @@ An image with `cliffano/swaggy-c` repository and `latest` tag should show up:
     haku> docker images
 
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    cliffano/swaggy-c   latest              36417fe204e3        About an hour ago   979.5 MB
-    alpine              latest              a41a7446062d        2 weeks ago         3.962 MB
+    cliffano/swaggy-c   latest              a9ea23c9807d        7 minutes ago       3.61 GB
+    ubuntu              latest              14f60031763d        7 days ago          120 MB
 
 Usage
 -----
@@ -44,6 +44,7 @@ Execute `swaggy-c` to generate the API clients, Swaggy C and Swagger CodeGen are
       --workdir /opt/workspace \
       -v $(pwd):/opt/workspace \
       -t cliffano/swaggy-c \
+      --rm \
       swaggy-c \
       --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
       --api-spec path/to/spec.yml \
@@ -59,6 +60,19 @@ What's inside
 | `/usr/local/bin/swaggy-c` | Swaggy C CLI command, available in `PATH` |
 | `/opt/swaggy-c/bin/info.sh` | Display versions info of all provisioned languages |
 | `/opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar` | Swagger CodeGen CLI jar, use this when you want to run the latest jar from the time when the Docker image was created |
+
+Adding new language
+-------------------
+
+As Swagger CodeGen keeps evolving, new languages will be added throughout time. To add a new language support to Packer Swaggy C:
+
+# Create new language provisioning manifest at `modules-extra/swagger_codegen/manifests/langs/<lang>.pp`
+
+# If the provisioning manifest requires a new Puppet module, add the dependency to `Puppetfile`
+
+# Create the corresponding info script for the new language at `modules-extra/swagger_codegen/files/langs/<lang>-info.sh`, or alternatively if the info script is a template `modules-extra/swagger_codegen/templates/langs/<lang>-info.sh.epp`
+
+# Update `provisioners/main.pp` to include the new language by adding `include swagger_codegen::langs::<lang>`
 
 Colophon
 --------
