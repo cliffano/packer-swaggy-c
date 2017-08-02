@@ -26,6 +26,7 @@ docker:
 
 docker-info:
 	docker run \
+	  --rm \
 	  --workdir /opt/workspace \
 	  -v `pwd`:/opt/workspace \
 	  -t cliffano/swaggy-c \
