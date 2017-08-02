@@ -7,4 +7,4 @@ set -o errexit
 echo "****************************************"
 echo "* Kotlin info"
 echo "****************************************"
-echo "kotlin version: $(sdk list kotlin)"
+echo "kotlin version: $(sdk current kotlin)"

@@ -7,4 +7,4 @@ set -o errexit
 echo "****************************************"
 echo "* Clojure info"
 echo "****************************************"
-echo "leiningen version: $(sdk list leiningen)"
+echo "leiningen version: $(sdk current leiningen)"
