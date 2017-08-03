@@ -7,6 +7,11 @@ class swagger_codegen::langs::ruby (
     gems_version => 'latest',
   }
 
+  package { 'ruby-dev':
+    ensure   => latest,
+    provider => apt,
+  }
+
   package { 'bundler':
     ensure   => latest,
     provider => gem;
