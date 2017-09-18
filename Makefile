@@ -38,4 +38,4 @@ docker-publish:
 tools:
 	gem install puppet-lint r10k
 
-.PHONY: ci clean deps lint docker docker-publish tools
+.PHONY: ci clean deps lint docker docker-info docker-publish tools
