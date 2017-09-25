@@ -69,7 +69,9 @@ As Swagger CodeGen keeps evolving, new languages will be added throughout time. 
 1. Create new language provisioning manifest at `modules-extra/swagger_codegen/manifests/langs/<lang>.pp`
 2. If the provisioning manifest requires a new Puppet module, add the dependency to `Puppetfile`
 3. Create the corresponding info script for the new language at `modules-extra/swagger_codegen/files/langs/<lang>-info.sh`, or alternatively if the info script is a template `modules-extra/swagger_codegen/templates/langs/<lang>-info.sh.epp`
-4. Update `provisioners/main.pp` to include the new language by adding `include swagger_codegen::langs::<lang>`
+4. Update `provisioners/swagger-codegen-langs.pp` to include the new language by adding `include swagger_codegen::langs::<lang>`
+5. Build Swagger Codegen Languages Docker image `make docker-swagger-codegen-langs`
+6. Build Swaggy C Docker image `make docker-swaggy-c`
 
 Colophon
 --------

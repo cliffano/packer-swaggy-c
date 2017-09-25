@@ -17,14 +17,21 @@ lint:
 		provisioners/*.sh \
 		modules-extra/*/files/langs/*.sh
 
-docker:
+docker-swagger-codegen-langs:
 	mkdir -p logs/
-	PACKER_LOG_PATH=logs/packer-$@.log \
+	PACKER_LOG_PATH=logs/packer-swagger-codegen-langs.log \
 		PACKER_LOG=1 \
 		packer build \
-		templates/$@.json
+		templates/docker-swagger-codegen-langs.json
 
-docker-info:
+docker-swaggy-c:
+	mkdir -p logs/
+	PACKER_LOG_PATH=logs/packer-swaggy-c.log \
+		PACKER_LOG=1 \
+		packer build \
+		templates/docker-swaggy-c.json
+
+docker-info-swagger-codegen-langs:
 	docker run \
 	  --rm \
 	  --workdir /opt/workspace \
@@ -32,7 +39,18 @@ docker-info:
 	  -t cliffano/swaggy-c \
 	  /opt/swagger-codegen/bin/info.sh
 
-docker-publish:
+docker-info-swaggy-c:
+	docker run \
+	  --rm \
+	  --workdir /opt/workspace \
+	  -v `pwd`:/opt/workspace \
+	  -t cliffano/swaggy-c \
+	  /opt/swagger-codegen/bin/info.sh
+
+docker-publish-swagger-codegen-langs:
+	docker push cliffano/swagger-codegen-langs:latest
+
+docker-publish-swaggy-c:
 	docker push cliffano/swaggy-c:latest
 
 tools:

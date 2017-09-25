@@ -8,10 +8,8 @@ exec { 'apt-get update':
     '/bin',
   ],
 }
-include git
 
 include swagger_codegen
-include swagger_codegen::install
 include swagger_codegen::langs::clojure
 include swagger_codegen::langs::dart
 include swagger_codegen::langs::erlang
@@ -28,6 +26,3 @@ include swagger_codegen::langs::scala
 #include swagger_codegen::langs::sinatra
 include swagger_codegen::langs::swift
 include swagger_codegen::langs::typescript
-
-include swaggy_c
-include swaggy_c::install

@@ -4,9 +4,11 @@
   "builders": [
     {
       "type": "docker",
-      "image": "ubuntu",
+      "image": "cliffano/swagger-codegen-langs",
       "commit": true,
-      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/bash"],
+      "run_command": [
+        "-d", "-i", "-t", "{{.Image}}", "/bin/bash"
+      ],
       "changes": [
         "ENV LANG en_US.UTF-8",
         "ENV LEIN_ROOT true",
@@ -17,7 +19,9 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "provisioners/pre.sh"
+      "inline": [
+        "mkdir -p /tmp/packer-swaggy-c/"
+      ]
     },
     {
       "type": "puppet-masterless",
@@ -32,7 +36,11 @@
     },
     {
       "type": "shell",
-      "script": "provisioners/post.sh"
+      "inline": [
+        "/opt/swagger-codegen/bin/info.sh",
+        "/opt/swaggy-c/bin/info.sh",
+        "rm -rf /tmp/packer-swaggy-c/"
+      ]
     }
   ],
   "post-processors": [
@@ -40,7 +48,9 @@
       "type": "docker-tag",
       "repository": "cliffano/swaggy-c",
       "tag": "latest",
-      "only": ["docker"]
+      "only": [
+        "docker"
+      ]
     }
   ]
 }

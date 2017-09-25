@@ -1,0 +1,59 @@
+{
+  "variables": {
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu",
+      "commit": true,
+      "run_command": [
+        "-d", "-i", "-t", "{{.Image}}", "/bin/bash"
+      ],
+      "changes": [
+        "ENV LANG en_US.UTF-8",
+        "ENV LEIN_ROOT true",
+        "ENV PATH /opt/swagger-codegen/langs/swift-3.1.1-RELEASE-ubuntu16.04/usr/bin/:/root/.sdkman/candidates/leiningen/current/bin/:/root/.sdkman/candidates/kotlin/current/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "mkdir -p /tmp/packer-swaggy-c/"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "provisioners/puppet.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "puppet_bin_dir": "/opt/puppetlabs/bin/",
+      "extra_arguments": "--debug",
+      "staging_directory": "/tmp/packer-swaggy-c",
+      "manifest_file": "provisioners/swagger-codegen-langs.pp",
+      "module_paths": [
+        "modules",
+        "modules-extra"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "/opt/swagger-codegen/bin/info.sh",
+        "rm -rf /tmp/packer-swaggy-c/"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "cliffano/swagger-codegen-langs",
+      "tag": "latest",
+      "only": [
+        "docker"
+      ]
+    }
+  ]
+}

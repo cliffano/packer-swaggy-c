@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Create stage directory for provisioning using puppet-masterless
-mkdir -p /tmp/packer-swaggy-c/
-
 # Install Puppet, adapted from
 # https://github.com/puppetlabs/puppet-in-docker/blob/master/puppet-agent-ubuntu/Dockerfile
 # Will switch to Puppetlabs' Docker image if they provide puppet-masterless
