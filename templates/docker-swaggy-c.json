@@ -28,7 +28,7 @@
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
       "extra_arguments": "--debug",
       "staging_directory": "/tmp/packer-swaggy-c",
-      "manifest_file": "provisioners/main.pp",
+      "manifest_file": "provisioners/swaggy-c.pp",
       "module_paths": [
         "modules",
         "modules-extra"
