@@ -1,4 +1,4 @@
-ci: clean tools deps lint docker docker-info
+ci: clean tools deps lint docker-swagger-codegen-langs docker-info-swagger-codegen-langs docker-swaggy-c-langs docker-info-swaggy-c-langs
 
 clean:
 	rm -rf logs modules
