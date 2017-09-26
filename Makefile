@@ -45,8 +45,7 @@ docker-info-swaggy-c:
 	  --workdir /opt/workspace \
 	  -v `pwd`:/opt/workspace \
 	  -t cliffano/swaggy-c \
-	  /opt/swagger-codegen/bin/info.sh && \
-		/opt/swaggy-c/bin/info.sh
+	  /bin/sh -c "/opt/swagger-codegen/bin/info.sh; /opt/swaggy-c/bin/info.sh"
 
 docker-publish-swagger-codegen-langs:
 	docker push cliffano/swagger-codegen-langs:latest
