@@ -36,7 +36,7 @@ docker-info-swagger-codegen-langs:
 	  --rm \
 	  --workdir /opt/workspace \
 	  -v `pwd`:/opt/workspace \
-	  -t cliffano/swaggy-c \
+	  -t cliffano/swagger-codegen-langs \
 	  /opt/swagger-codegen/bin/info.sh
 
 docker-info-swaggy-c:
