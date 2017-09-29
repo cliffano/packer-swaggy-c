@@ -1,4 +1,4 @@
-ci: clean tools deps lint docker-swagger-codegen-langs docker-info-swagger-codegen-langs docker-swaggy-c-langs docker-info-swaggy-c-langs
+ci: clean tools deps lint docker-swagger-codegen-langs docker-info-swagger-codegen-langs docker-swaggy-c docker-info-swaggy-c
 
 clean:
 	rm -rf logs modules
@@ -56,4 +56,4 @@ docker-publish-swaggy-c:
 tools:
 	gem install puppet-lint r10k
 
-.PHONY: ci clean deps lint docker docker-info docker-publish tools
+.PHONY: ci clean deps lint docker-swagger-codegen-langs docker-info-swagger-codegen-langs docker-publish-swagger-codegen-langs docker-swaggy-c docker-info-swaggy-c docker-publish-swaggy-c tools
