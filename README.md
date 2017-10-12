@@ -6,13 +6,11 @@
 Packer Swaggy C
 ---------------
 
-Packer Swaggy C is a Packer builder of Docker image which contain [Swagger CodeGen](https://github.com/swagger-api/swagger-codegen) supported languages, [Swagger CodeGen](https://github.com/swagger-api/swagger-codegen) CLI jar and [Swaggy C](https://github.com/cliffano/swaggy-c).
+Packer Swaggy C is a Packer builder of Docker image which contains [Swagger CodeGen](https://github.com/swagger-api/swagger-codegen) supported languages, [Swagger CodeGen](https://github.com/swagger-api/swagger-codegen) CLI jar and [Swaggy C](https://github.com/cliffano/swaggy-c).
 
-The Docker image is based on [Ubuntu Linux](https://hub.docker.com/_/ubuntu/). It aims to have all Swagger CodeGen supported languages installed, along with Swagger CodeGen CLI jar and [Swaggy C](https://github.com/cliffano/swaggy-c).
+This is useful when you want to build multiple API clients from an OpenAPI spec without having to install the languages one by one.
 
-This is handy when you have an OpenAPI spec and you want to build multiple API clients without having to install the languages one by one.
-
-Supported Swagger CodeGen languages: Clojure, Dart, Erlang, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Scala, TypeScript. More to come!
+Current included languages: Clojure, Dart, Erlang, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Scala, TypeScript. More coming soon!
 
 Installation
 ------------
