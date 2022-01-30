@@ -1,7 +1,9 @@
 <img align="right" src="https://raw.github.com/cliffano/packer-swaggy-c/master/avatar.jpg" alt="Avatar"/>
 
-[![Build Status](https://img.shields.io/travis/cliffano/packer-swaggy-c.svg)](http://travis-ci.org/cliffano/packer-swaggy-c)
-[![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/swaggy-c.svg)](https://hub.docker.com/r/cliffano/swaggy-c/)
+[![Build Status](https://github.com/cliffano/packer-swaggy-c/workflows/CI/badge.svg)](https://github.com/cliffano/packer-swaggy-c/actions?query=workflow%3ACI)
+[![Docker Pulls Count - Swaggy-C](https://img.shields.io/docker/pulls/cliffano/swaggy-c.svg)](https://hub.docker.com/r/cliffano/swaggy-c/)
+[![Docker Pulls Count - Swagger CodeGen Langs](https://img.shields.io/docker/pulls/cliffano/swagger-codegen-langs.svg)](https://hub.docker.com/r/cliffano/swagger-codegen-langs/)
+[![Vulnerability Scanning Status](https://snyk.io/test/github/cliffano/packer-swaggy-c/badge.svg)](https://snyk.io/test/github/cliffano/packer-swaggy-c)
 
 Packer Swaggy C
 ---------------
