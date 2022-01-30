@@ -1,0 +1,45 @@
+{
+  "resources": [
+    {
+      "path": "conf/docker-swaggy-c.json",
+      "type": "json",
+      "params": {
+        "property": "version"
+      }
+    },
+    {
+      "path": "conf/docker-swagger-codegen-langs.json",
+      "type": "json",
+      "params": {
+        "property": "version"
+      }
+    },
+    {
+      "path": "Makefile",
+      "type": "makefile",
+      "params": {
+        "variable": "version"
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    },
+    {
+      "path": ".github/workflows/publish-docker-swaggy-c-workflow.yaml",
+      "type": "yaml",
+      "params": {
+        "property": "jobs.build.steps.0.with.ref",
+        "post_release_value": "main"
+      }
+    },
+    {
+      "path": ".github/workflows/publish-docker-swagger-codegen-langs-workflow.yaml",
+      "type": "yaml",
+      "params": {
+        "property": "jobs.build.steps.0.with.ref",
+        "post_release_value": "main"
+      }
+    }
+  ]
+}
