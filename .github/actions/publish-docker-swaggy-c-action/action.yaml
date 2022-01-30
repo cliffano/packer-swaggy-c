@@ -1,0 +1,5 @@
+---
+name: 'Publish Docker Swaggy-C'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

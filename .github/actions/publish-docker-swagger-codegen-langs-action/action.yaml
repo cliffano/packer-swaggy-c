@@ -1,0 +1,5 @@
+---
+name: 'Publish Docker Swagger CodeGen Langs'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
